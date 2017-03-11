@@ -1,0 +1,63 @@
+SpectrAlpaca - don't let them steal your color
+
+
+Fight your way through each stage to the grey place where you need to create a rainbow. Once you do that, color is restored, and you can move on. Creatures try to steal your saturation, don't let them! 
+
+
+
+
+# goal
+create the rainbow, brining color to the land.
+go to the rainbow area, which is grey, and stay there for a while while the rainbow builds (maybe it takes color from you to build, but then you gain it back?)
+
+enemies try to steal your color (health). when they take your color, they get a bit colorful. if you kill them, they drop the color and you can get it back.
+
+enemies are in your way, on the way to the rainbow.
+
+
+
+
+
+
+
+
+
+TODO
+
+- put on github
+- make goal obvious
+- crosshair
+- walking animation
+- "meaningful gameplay"
+- weapon types
+- enemy types
+- dank map
+- dank effects
+- objects/map in front of player are transparent
+- ideas for different goal types (rip off Helldivers, probably)
+
+
+FX ideas
+
+- Player trail particles that leave splashes of color on the ground
+- Desaturation around areas
+- "cathedral" light ray effects (wide ones, maybe color changing?)
+- "snow" of colors
+- per-voxel effects, such as shimmering, or fading in/out across the volume
+
+
+
+public class SetVolumeAlpha : MonoBehaviour {
+
+    public int alpha = 0;
+
+    //Sets the alpha on all voxels in the volume this script is placed on.
+	public void SetAlpha () {
+        var frame = GetComponent<Volume>().Frames[0];
+        for (int i = 0; i < frame.Voxels.Length; i++)
+        {
+            var c = frame.Voxels[i].Color;  // get the current voxel colour
+            c.a = (byte)alpha ;  // set the alpha
+            frame.Voxels[i].Color = c;  // set the colour back
+        }
+    }
