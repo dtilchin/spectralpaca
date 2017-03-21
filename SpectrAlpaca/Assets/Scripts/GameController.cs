@@ -11,6 +11,7 @@ public class GameController : MonoBehaviour {
 	public GameObject spawnPointsParent;
 	public GameObject goal;
 
+
 	private int score = 0;
 	private float playerHealth = 1;
 

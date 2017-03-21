@@ -1,33 +1,12 @@
 SpectrAlpaca - don't let them steal your color
 
 
-Fight your way through each stage to the grey place where you need to create a rainbow. Once you do that, color is restored, and you can move on. Creatures try to steal your saturation, don't let them! 
-
-
-
-
-# goal
-create the rainbow, brining color to the land.
-go to the rainbow area, which is grey, and stay there for a while while the rainbow builds (maybe it takes color from you to build, but then you gain it back?)
-
-enemies try to steal your color (health). when they take your color, they get a bit colorful. if you kill them, they drop the color and you can get it back.
-
-enemies are in your way, on the way to the rainbow.
-
-
-
-
-
-
-
-
-
 TODO
-
-- put on github
-- make goal obvious
+- map indicates goals are done (fade / desaturate / greyscale?)
+- fix hanging on rainbow spawn
 - crosshair
 - walking animation
+- get health back from enemies... or does it recharge on a timer?
 - "meaningful gameplay"
 - weapon types
 - enemy types
@@ -37,14 +16,75 @@ TODO
 - ideas for different goal types (rip off Helldivers, probably)
 
 
+
+
+Nothing -> Divers in steps
+- Run around a map, capture goals. Capture 5 goals to win. Needs mini-map.
+- Enemies randomly spawn around you, take a few shots to kill. Spawn rate/dps/hp just enough to be hard.
+- More enemies spawn when near a goal. Less "flat" tempo
+- Enemy patrol mechanism / enemies spawning more enemies if you don't kill then fast. Ups/downs in tempo, spikes cause overwhelm which provides tension.
+- Reloading / clip mechanism. Takes skill and planning. More complexity to screw up, more challenge.
+- Some enemies come in groups. Something about this is satisfying.
+- Limited ammo. Resource management provides tension.
+- Different kinds of weapons. Gives variation, and interaction with enemy types.
+- Attack skills. Difficulty can be pushed higher with this advantage, which must be managed.
+- Point defense skills. Just fun. More resources to manage.
+- Enemy variety. Some being much more difficult forces you to prioritize targets.
+- Different maps have different enemies. Variety, and introduces strategy in choosing weapons/skills.
+- Different maps. Less flat and boring, gives a sense of "oh, what next?"
+- Goal variety. Mixes things up, and the ones that prevent you from shooting benefit from different strategies.
+- Weapons are unlocked by progress. Just one more!
+- Difficulty progression. Just one more!
+- Satisfying weapons, sounds, death animations... What is "satisfying"?
+
+
+
+
+
+
+What makes Helldivers fun? (tl;dr everything, it's just dialed)
+
+- well balanced difficulty, always on the edge of too hard. not fun when super easy
+- edge between handling it and being overwhelmed is close, and narrow
+- have to be fast in combat (see above). delay means failure.
+- when slightly overwhelmed, it's still often possible to recover. that it's possible to overcome a big wave makes it more fun than just instant failure
+- constant pressure, lulls in action occur but are temporary
+- feeling of progression, with unlocks and increasing difficulty
+- feeling of "just one more" due to unlocks. "just the next gun", "just one more level"
+- time based rewards, that may not be there later. gives satisfaction when achieved
+- variety of weapons, requiring different skill
+- satisfying weapons, explosions, etc
+- clear progression within each mission
+- groups and waves of enemies gives a sense of tempo or rhythm, as opposed to a solid stream
+- each level of increasing difficulty is a significant step up, gives something to aspire towards
+- variety of objective types (good ones: capture, destroy, activate)
+- resource management, in the form of ammo and "spells"
+
+
+
 FX ideas
 
 - Player trail particles that leave splashes of color on the ground
 - Desaturation around areas
 - "cathedral" light ray effects (wide ones, maybe color changing?)
 - "snow" of colors
-- per-voxel effects, such as shimmering, or fading in/out across the volume
+- per-voxel effects, such as shimmering (scale, tint, alpha), or fading in/out across the volume
 
+
+
+
+What's balanced difficulty, and tempo?
+If you looked at a graph of how much total enemy HP is on the screen over time, would you see spikes? Once there is a spike, how fast does it increase? Spikes and lulls may be a representation of "tempo".
+
+
+The "edge of overwhelm"
+Enemies that spawn other enemies seem crucial. This allows difficulty to increase rapidly, forcing you into fast reactions to say afloat. The first "spike" is a challenge and best avoided, but there's the possibility of beating it back. Subsequent spikes become a lot harder, and the tipping point is quickly reached.
+
+Enemies coming in groups instead of single ones probably helps too, since it means that it's not trivial to beat back the whole group before one calls for reinforcements. If the initial spawn was too easy to beat, there would be less risk of the first spike, and thus less of an edge.
+
+
+Progression
+Character/equipment, and difficulty. Hell divers has both. Nuclear throne only has the latter. With Throne, the reason for "just one more" is that maybe you can make it slightly further this time (as well as unpredictability with chests). With Divers, it's that as well as "one more level/unlock". But, the unlocks allow you to progress further.
 
 
 public class SetVolumeAlpha : MonoBehaviour {

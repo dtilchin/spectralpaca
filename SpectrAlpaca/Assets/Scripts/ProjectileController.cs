@@ -7,6 +7,7 @@ public class ProjectileController : MonoBehaviour {
 	public float ttl;
 
 	private float createdAt;
+	private bool hasHit = false;
 
 	void Start () {
 		Rigidbody rb = GetComponent<Rigidbody> ();
@@ -22,9 +23,10 @@ public class ProjectileController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter(Collider other) {
-		if (other.gameObject.CompareTag ("Enemy")) {
+		if (other.gameObject.CompareTag ("Enemy") && !hasHit) {
 			other.gameObject.GetComponent<EnemyController> ().OnHit ();
 			Destroy (gameObject);
+			hasHit = true;
 		} else if (other.gameObject.CompareTag ("Map")) {
 			Destroy (gameObject);
 		}
