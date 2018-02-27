@@ -1,8 +1,18 @@
 SpectrAlpaca - don't let them steal your color
 
 
+
+Gradients make the vapor wave thing work
+"neon light" lines in combination?
+
+
+
+
 TODO
-- map indicates goals are done (fade / desaturate / greyscale?)
+- sea floor concept
+- color sheme
+- indication that enemies are attacking
+- enemies take more than one hit
 - fix hanging on rainbow spawn
 - crosshair
 - walking animation
@@ -38,7 +48,7 @@ Nothing -> Divers in steps
 - Satisfying weapons, sounds, death animations... What is "satisfying"?
 
 
-
+onion illness brief space mimic sing remain trash time erase swim trigger
 
 
 
@@ -64,6 +74,8 @@ What makes Helldivers fun? (tl;dr everything, it's just dialed)
 
 FX ideas
 
+- "neon tube" lines
+- characters/props emit light
 - Player trail particles that leave splashes of color on the ground
 - Desaturation around areas
 - "cathedral" light ray effects (wide ones, maybe color changing?)

@@ -9,10 +9,9 @@ public class GoalController : MonoBehaviour {
 	public GameObject goalFlag;
 	public GameObject mapIcon;
 	public GameObject progressBar;
+	public GameObject completedIcon;
 
 	public float timeNeeded = 3f;
-
-	private bool hasCreated = false;
 
 	private GameController gameController;
 	private Image progressBarImage;
@@ -51,9 +50,15 @@ public class GoalController : MonoBehaviour {
 			finished = true;
 			gameController.OnScore ();
 
-			//progressBar.SetActive (false);
+			progressBar.SetActive (false);
+			completedIcon.SetActive (true);
 
-			//mapIcon.GetComponent<ColorCorrectionCurves> ().saturation = 0f;
+			Renderer mapRenderer = mapIcon.GetComponent<Renderer>();
+			Material iconMat = new Material (mapRenderer.material);
+			Color mapColor = iconMat.color;
+			mapColor.a = 0.25f;
+			iconMat.color = mapColor;
+			mapRenderer.material = iconMat;
 		}
 
 		progress = Mathf.Max (progress, 0f);
@@ -68,7 +73,6 @@ public class GoalController : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			playerIsIn = true;
 			if (!goal.activeSelf) {
-				//Quaternion rot = Quaternion.Euler ( new Vector3(0f, transform.rotation.eulerAngles.y + 180f, 0f));
 				goal.SetActive(true);
 				Destroy (goalFlag.gameObject);
 			}
